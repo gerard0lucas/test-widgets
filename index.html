@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Forms</title>
+<style>
+    /* Reset some basic styling */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Body styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Form container styling */
+    .form-container {
+        background-color: #fff;
+        padding: 25px 20px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 350px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-container p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .form-container h2 {
+        color: #0099ff;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    /* Input and select styling */
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    /* Styling for the row containing State and City */
+    .form-container .flex-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .form-container .flex-row select {
+        width: 100%;
+    }
+
+    /* Button styling */
+    .form-container .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .form-container .buttons a {
+        color: #0099ff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .form-container .buttons button {
+        color: #fff;
+        background-color: #0099ff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-container .buttons button:hover {
+        background-color: #007acc;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Registration Form for Koshys Institute of Management Studies -->
+<div class="form-container">
+    <p>Koshys Institute of Management Studies</p>
+    <h2>Registrations Open for 2025-2026</h2>
+    <form>
+        <input type="text" placeholder="Enter Full Name*" required>
+        <input type="text" placeholder="Enter Mobile No.*" required>
+        <input type="email" placeholder="Enter Email Id*" required>
+        
+        <div class="flex-row">
+            <select required>
+                <option value="">Select State*</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+            </select>
+            <select required>
+                <option value="">Select City*</option>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+            </select>
+        </div>
+        
+        <select required>
+            <option value="">Select Course*</option>
+            <option value="bcom_general">B.Com General</option>
+            <option value="bcom_addon">B.Com Add-on</option>
+            <option value="bcom_logistics_bnu">B.Com Logistics (BNU)</option>
+            <option value="bba_general">BBA General</option>
+            <option value="bba_addon">BBA Add-on</option>
+            <option value="bba_aviation_bnu">BBA Aviation (BNU)</option>
+            <option value="bba_aviation_iata">BBA Aviation (IATA)</option>
+            <option value="bba_advanced">BBA Advanced (Aviation + Logistics)</option>
+            <option value="bca_general">BCA General</option>
+            <option value="bca_addon">BCA Add-on</option>
+            <option value="bva_animation_multimedia">BVA Animation & Multimedia</option>
+            <option value="bva_graphics_design">BVA Graphics Design</option>
+            <option value="bva_interior_design">BVA Interior Design</option>
+            <option value="ba_cpjn">BA - CPJ Normal</option>
+            <option value="ba_cpja">BA - CPJ Add-on</option>
+        </select>
+
+        <div class="buttons">
+            <a href="#">Existing User? Login</a>
+            <button type="submit">Register Now</button>
+        </div>
+    </form>
+</div>
+
+<!-- Registration Form for Koshys Institute of Health Sciences -->
+<div class="form-container">
+    <p>Koshys Institute of Health Sciences</p>
+    <h2>Registrations Open for 2025-2026</h2>
+    <form>
+        <input type="text" placeholder="Enter Full Name*" required>
+        <input type="text" placeholder="Enter Mobile No.*" required>
+        <input type="email" placeholder="Enter Email Id*" required>
+        
+        <div class="flex-row">
+            <select required>
+                <option value="">Select State*</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+            </select>
+            <select required>
+                <option value="">Select City*</option>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+            </select>
+        </div>
+
+        <select id="institutionSelect" onchange="updateCourses()" required>
+            <option value="">Select Institution*</option>
+            <option value="koshys_nursing">Koshys College of Nursing</option>
+            <option value="koshys_school_nursing">Koshys School of Nursing</option>
+            <option value="koshys_allied_health">Koshys Institute of Allied Health Sciences</option>
+            <option value="little_flower_nursing">Bangalore Little Flower College of Nursing</option>
+        </select> 
+        
+        <select id="courseSelect" required>
+            <option value="">Select Course*</option>
+        </select>
+
+        <div class="buttons">
+            <a href="#">Existing User? Login</a>
+            <button type="submit">Register Now</button>
+        </div>
+    </form>
+</div>
+
+<!-- Registration Form for Koshys Institute of Hotel Management -->
+<div class="form-container">
+    <p>Koshys Institute of Hotel Managements</p>
+    <h2>Registrations Open for 2025-2026</h2>
+    <form>
+        <input type="text" placeholder="Enter Full Name*" required>
+        <input type="text" placeholder="Enter Mobile No.*" required>
+        <input type="email" placeholder="Enter Email Id*" required>
+        
+        <div class="flex-row">
+            <select required>
+                <option value="">Select State*</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+            </select>
+            <select required>
+                <option value="">Select City*</option>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+            </select>
+        </div>
+        
+        <select required>
+            <option value="BHM">BHM</option>
+        </select>
+
+        <div class="buttons">
+            <a href="#">Existing User? Login</a>
+            <button type="submit">Register Now</button>
+        </div>
+    </form>
+</div>
+
+<!-- Registration Form for Koshys Institute of Management Studies -->
+<div class="form-container">
+    <p>Koshys Institute of Management Studies</p>
+    <h2>Registrations Open for 2025-2026</h2>
+    <form>
+        <input type="text" placeholder="Enter Full Name*" required>
+        <input type="text" placeholder="Enter Mobile No.*" required>
+        <input type="email" placeholder="Enter Email Id*" required>
+        
+        <div class="flex-row">
+            <select required>
+                <option value="">Select State*</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+            </select>
+            <select required>
+                <option value="">Select City*</option>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+            </select>
+        </div>
+        
+        <select required>
+            <option value="">Select Course*</option>
+            <option value="MBA Core">MBA Core</option>
+            <option value="MBA Comprehensive">MBA Comprehensive</option>
+            <option value="MBA Advanced">MBA Advanced</option>
+        </select>
+
+        <div class="buttons">
+            <a href="#">Existing User? Login</a>
+            <button type="submit">Register Now</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Define courses based on institution
+    const coursesByInstitution = {
+        "koshys_nursing": [
+            "B.Sc Nursing",
+            "PB B.Sc Nursing",
+            "M.Sc Nursing - Medical Surgical Nursing",
+            "M.Sc Nursing - OBG Nursing",
+            "M.Sc Nursing - Community Health Nursing",
+            "M.Sc Nursing - Child Health Nursing"
+        ],
+        "koshys_school_nursing": [
+            "GNM"
+        ],
+        "koshys_allied_health": [
+            "B.Sc. - Medical Imaging Technology",
+            "B.Sc. - Medical Laboratory Technology",
+            "B.Sc. - Anaesthesia and Operation Theatre Technology",
+            "B.Sc. - Respiratory Care Technology",
+            "B.Sc. - Renal Dialysis Technology"
+        ],
+        "little_flower_nursing": [
+            "B.Sc Nursing"
+        ]
+    };
+
+    // Update courses dropdown based on selected institution
+    function updateCourses() {
+        const institution = document.getElementById("institutionSelect").value;
+        const courseSelect = document.getElementById("courseSelect");
+        
+        // Clear previous options
+        courseSelect.innerHTML = '<option value="">Select Course*</option>';
+        
+        if (institution && coursesByInstitution[institution]) {
+            coursesByInstitution[institution].forEach(course => {
+                const option = document.createElement("option");
+                option.value = course;
+                option.textContent = course;
+                courseSelect.appendChild(option);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
